@@ -1,5 +1,14 @@
+import { View } from "react-native";
 import { Stack } from "expo-router";
+import Navbar from "@/modules/dashboard/components/Navbar";
 
 export default function RootLayout() {
-	return <Stack />;
+	return (
+		<View style={{ flex: 1 }}>
+			<View style={{ flex: 1 }}>
+				<Stack screenOptions={{ headerShown: false }} />
+			</View>
+			<Navbar />
+		</View>
+	);
 }
