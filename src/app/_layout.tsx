@@ -5,9 +5,7 @@ import Navbar from "@/modules/dashboard/components/Navbar";
 export default function RootLayout() {
 	return (
 		<View style={{ flex: 1 }}>
-			<View style={{ flex: 1 }}>
-				<Stack screenOptions={{ headerShown: false }} />
-			</View>
+			<Stack screenOptions={{ headerShown: false }} />
 			<Navbar />
 		</View>
 	);

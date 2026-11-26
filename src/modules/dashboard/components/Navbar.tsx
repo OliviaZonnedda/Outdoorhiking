@@ -6,49 +6,63 @@ import MapIcon from "./icons/MapIcon";
 import ProfileIcon from "./icons/ProfileIcon";
 import { Ionicons } from "@react-native-vector-icons/ionicons";
 
-const links = [
-	{ label: "Home", href: "/", Icon: HomeIcon },
-	{ label: "Map", href: "/map", Icon: MapIcon },
-	{ label: "Profile", href: "/profile", Icon: ProfileIcon },
-] as const;
-
 export default function Navbar() {
 	const pathname = usePathname();
 	const insets = useSafeAreaInsets();
 
-	return (
-		<View style={[styles.navbar, { paddingBottom: insets.bottom }]}>
-			{links.map((link) => {
-				const active = pathname === link.href;
+	const goTo = (href: "/" | "/map" | "/profile") => {
+		if (pathname !== href) router.replace(href);
+	};
 
-				return (
-					<Pressable
-						key={link.href}
-						style={styles.item}
-						onPress={() => {
-							if (!active) router.replace(link.href);
-						}}
-					>
-						{link.href === "/" ? (
-							<HomeIcon size={28} color={active ? "#2e7d32" : "#777"} />
-						) : (
-							<link.Icon size={28} color={active ? "#2e7d32" : "#777"} />
-						)}
-					</Pressable>
-				);
-			})}
+	return (
+		<View style={[styles.wrapper, { paddingBottom: insets.bottom + 6 }]}>
+			<View style={styles.navbar}>
+				<Pressable
+					style={styles.item}
+					onPress={() => goTo("/")}
+					accessibilityLabel="Home"
+				>
+					<HomeIcon size={25} color="#000" />
+				</Pressable>
+
+				<Pressable
+					style={styles.item}
+					onPress={() => goTo("/map")}
+					accessibilityLabel="Map"
+				>
+					<MapIcon size={27} color="#000" />
+				</Pressable>
+
+				<Pressable
+					style={styles.item}
+					onPress={() => goTo("/profile")}
+					accessibilityLabel="Profile"
+				>
+					<ProfileIcon size={25} color="#000" />
+				</Pressable>
+			</View>
 		</View>
 	);
 }
 
 const styles = StyleSheet.create({
-	navbar: {
-		flexDirection: "row",
-		backgroundColor: "white",
-		borderTopWidth: 1,
-		borderTopColor: "#ddd",
+	wrapper: {
+		position: "absolute",
+		left: 0,
+		right: 0,
+		bottom: 0,
+		paddingHorizontal: 20,
+		backgroundColor: "transparent",
 	},
-	item: { flex: 1, alignItems: "center", paddingVertical: 16 },
-	label: { fontSize: 16, color: "#777" },
-	activeLabel: { color: "#2e7d32", fontWeight: "bold" },
+	navbar: {
+		height: 52,
+		flexDirection: "row",
+		backgroundColor: "#fff",
+		borderWidth: 1,
+		borderColor: "#777",
+		borderRadius: 26,
+		boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.18)",
+	},
+	item: { flex: 1, alignItems: "center", justifyContent: "center" },
+	avatar: { width: 36, height: 36, borderRadius: 18 },
 });
