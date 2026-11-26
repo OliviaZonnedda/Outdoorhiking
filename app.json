@@ -1,52 +1,53 @@
 {
-	"expo": {
-		"name": "Outdoorhiking",
-		"slug": "Outdoorhiking",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "",
-		"scheme": "outdoorhiking",
-		"userInterfaceStyle": "automatic",
-		"ios": {
-			"icon": ""
-		},
-		"android": {
-			"adaptiveIcon": {
-				"backgroundColor": "#E6F4FE",
-				"foregroundImage": "",
-				"backgroundImage": "",
-				"monochromeImage": ""
-			},
-			"predictiveBackGestureEnabled": false,
-			"package": "com.olivzsteam.Outdoorhiking"
-		},
-		"web": {
-			"output": "server",
-			"favicon": ""
-		},
-		"plugins": [
-			"expo-router",
-			[
-				"expo-splash-screen",
-				{
-					"backgroundColor": "#208AEF",
-					"image": ""
-				}
-			]
-		],
-		"experiments": {
-			"typedRoutes": true,
-			"reactCompiler": true
-		},
-		"extra": {
-			"router": {
-				"asyncRoutes": {
-					"web": true
-				}
-			},
-			"eas": {
-				"projectId": "afffa3a3-c889-4186-b3a8-5d53cf05bf5c"
-			}
-		}
-	}
+  "expo": {
+    "name": "Outdoorhiking",
+    "slug": "Outdoorhiking",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "",
+    "scheme": "outdoorhiking",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "icon": ""
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "",
+        "backgroundImage": "",
+        "monochromeImage": ""
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.olivzsteam.Outdoorhiking"
+    },
+    "web": {
+      "output": "server",
+      "favicon": ""
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#208AEF",
+          "image": ""
+        }
+      ],
+      "@maplibre/maplibre-react-native"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "afffa3a3-c889-4186-b3a8-5d53cf05bf5c"
+      }
+    }
+  }
 }
