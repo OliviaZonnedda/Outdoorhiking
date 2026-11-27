@@ -34,7 +34,8 @@
         }
       ],
       "@maplibre/maplibre-react-native",
-      "expo-sqlite"
+      "expo-sqlite",
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true,

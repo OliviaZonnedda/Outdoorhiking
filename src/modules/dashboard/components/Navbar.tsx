@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import HomeIcon from "./icons/HomeIcon";
 import MapIcon from "./icons/MapIcon";
 import ProfileIcon from "./icons/ProfileIcon";
-import { Ionicons } from "@react-native-vector-icons/ionicons";
+/**import { Ionicons } from "@react-native-vector-icons/ionicons";*/
 
 export default function Navbar() {
 	const pathname = usePathname();
